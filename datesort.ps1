@@ -1,9 +1,9 @@
 # Get the files 
-$Files = Get-ChildItem -Path 'C:\Users\LukeBray\Pictures\DateSortTest' -File -Recurse 
+$Files = Get-ChildItem -Path 'YOUR_PATH_HERE' -File -Recurse 
 $Files
 
 # Target Folder 
-$TargetPath = 'C:\Users\LukeBray\Pictures\DateSortTest'
+$TargetPath = 'TARGET_PATH_HERE'
 
 # Load assembly
 [reflection.assembly]::LoadWithPartialName("System.Drawing")
