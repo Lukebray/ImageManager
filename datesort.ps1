@@ -17,21 +17,7 @@ Foreach ( $File in $Files ){
     $Pic.Dispose()
 
     # Directory path
-	if ($DateTaken.Day -lt 10 -and $DateTaken.Month -lt 10) {
-	$Directory = $targetPath + "\" + $DateTaken.Year + "-0" + $DateTaken.Month + "-0" + $DateTaken.Day
-	}
-	
-	elseif ($DateTaken.Month -lt 10 -and $DateTaken.Day -gt 9) {
-	$Directory = $targetPath + "\" + $DateTaken.Year + "-0" + $DateTaken.Month + "-" + $DateTaken.Day
-	}
-	
-	elseif ($DateTaken.Day -lt 10 -and $DateTaken.Month -gt 9) {
-	$Directory = $targetPath + "\" + $DateTaken.Year + "-" + $DateTaken.Month + "-0" + $DateTaken.Day
-	}
-	
-	else {
-	$Directory = $targetPath + "\" + $DateTaken.Year + "-" + $DateTaken.Month + "-" + $DateTaken.Day
-	}
+	$Directory = $targetPath + "\" + $DateTaken.Year + "-" + ($DateTaken.Month).PadLeft(2,'0') + "-" + ($DateTaken.Day).PadLeft(2,'0')
 
     # Move file
     if ( -not ( Test-Path $Directory ) ) {
